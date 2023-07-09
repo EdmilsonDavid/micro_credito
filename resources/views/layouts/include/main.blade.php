@@ -80,25 +80,11 @@
           <div class="content-wrapper">
             <!-- Content -->
 
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row">
-                <!-- Website Analytics -->
-                <div class="col-lg-6 mb-4">
-                  <div
-                    class="swiper-container swiper-container-horizontal swiper swiper-card-advance-bg"
-                    id="swiper-with-pagination-cards">
-                    <div class="swiper-wrapper">
+        
                      
                      @yield('content')
                    
-                    </div>
-                    <div class="swiper-pagination"></div>
-                  </div>
-                </div>
-                <!--/ Website Analytics -->
-
-              </div>
-            </div>
+           
             <!-- / Content -->
 
             <!-- Footer -->

@@ -25,3 +25,9 @@ require __DIR__.'/auth.php';
 
 
 Route::get('ClientesController', [App\Http\Controllers\ClientesController::class, 'index'])->name('clientes.index');
+
+Route::get('EmprestimosController', [App\Http\Controllers\EmprestimosController::class, 'index'])->name('emprestimos.index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
