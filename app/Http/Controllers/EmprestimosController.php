@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
-use DataTables;
 
-class ClientesController extends Controller
+class EmprestimosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,6 @@ class ClientesController extends Controller
     public function index()
     {
         //
-        return view('admin.clientes.index');
     }
 
     /**
@@ -85,34 +82,4 @@ class ClientesController extends Controller
     {
         //
     }
-
-
-    
-
-    public function allClientes()
-    {
-//         $users = User::all();
-
-        $users = DB::table('clientes')
-            ->select('clientes.*', 'nome_completo', 'nuit', 'localizacao')
-            ->get();
-
-        return DataTables::of($users)
-            ->addColumn('action', function($user){
-                return '<a name="edit" id=" '.$user->user_id.' " class="edit btn btn-icon btn-sm">
-                    <i class="fa fa-edit"></i>
-                </a>'.' '.
-
-                    '<input type="text" value=" '.$user->user_id.' " class="pegar hidden" />'.' '.
-
-                    '<a name="delete" id="'.$user->user_id.'" class="delete btn btn-icon btn-sm js-sweetalert">
-                    <i class="fa fa-trash-o text-danger"></i>
-                </a>';
-
-            })->make(true);
-    }
-
-
-
-
 }
