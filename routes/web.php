@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Auth::routes();
 
-require __DIR__.'/auth.php';
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('ClientesController', [App\Http\Controllers\ClientesController::class, 'index'])->name('clientes.index');
+Route::get('/clientes', [ClientesController::class, 'index'])->name('clientes');
+Route::get('all/clientes', [ClientesController::class, 'allClientes'])->name('all.clientes');
