@@ -1,6 +1,7 @@
 @extends('layouts.include.main')
 
 @section('content')
+<<<<<<< HEAD
 
 
   <!-- Content -->
@@ -37,3 +38,5 @@
 
  @endsection
 
+=======
+>>>>>>> d37a7fc1ecc01684ae2c94d8e109309b38180b8f
